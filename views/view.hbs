@@ -1,0 +1,42 @@
+
+  <div class="page-header">
+    <h1>{{name}}</h1>
+  </div>
+
+  <p>
+    <strong>{{description}}</strong>
+  </p>
+
+  <form action="/change/{{id}}" method="post">
+    <div class="input-group">
+      <span class="input-group-addon">Costume</span>
+      <select name="characteristic">
+        {{#each characteristics}}
+          <option value="{{id}}">{{description}}</option>
+        {{/each}}
+      </select>
+      <input type="submit" value="Change">
+    </div>
+  </form>
+
+  <form action="/rubbish/{{id}}" method="post">
+    <div class="input-group">
+      <span class="input-group-addon">Rubbish</span>
+      <select name="rubbish">
+        {{#each rubbish}}
+          <option value="{{id}}">{{name}}</option>
+        {{/each}}
+      </select>
+      <input type="submit" value="Change">
+    </div>
+  </form>
+
+  <form action="/delete/{{id}}" method="post">
+    <div class="form-group">
+      <input type="submit" class="form-control" name="name" value="Delete">
+    </div>
+  </form>
+
+  <p>
+    <a href="/">Back to home.</a>
+  </p>
